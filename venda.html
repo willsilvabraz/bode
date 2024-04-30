@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Venda</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="col-lg-6">
+        <h1>Realizar Venda</h1>
+        <form method="POST" action="/venda.php">
+            <div class="form-group">
+                <label for="cliente_id">Cliente:</label>
+                <select class="form-control" id="cliente_id" name="cliente_id" required>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="produto_id">Produto:</label>
+                <select class="form-control" id="produto_id" name="produto_id" required>
+
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade:</label>
+                <input type="number" class="form-control" id="quantidade" name="quantidade" min="1" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Realizar Venda</button>
+        </form>
+    </div>
+</div>
+
+<script>
+var clienteSelect = document.getElementById('cliente_id');
+var produtoSelect = document.getElementById('produto_id');
+
+function carregarClientes() {
+    fetch('https://teste-dfb53-default-rtdb.firebaseio.com/clientes.json')
+    .then(response => response.json())
+    .then(data => {
+        for (var key in data) {
+            var option = document.createElement('option');
+            option.value = key;
+            option.textContent = data[key].nome + ' ' + data[key].sobrenome;
+            clienteSelect.appendChild(option);
+        }
+    });
+}
+
+function carregarProdutos() {
+    fetch('https://teste-dfb53-default-rtdb.firebaseio.com/produtos.json')
+    .then(response => response.json())
+    .then(data => {
+        for (var key in data) {
+            var option = document.createElement('option');
+            option.value = key;
+            option.textContent = data[key].nome;
+            produtoSelect.appendChild(option);
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    carregarClientes();
+    carregarProdutos();
+});
+</script>
+
+</body>
+</html>
