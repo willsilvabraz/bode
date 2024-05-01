@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clientes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/gerenClientes.css">
 </head>
 <body>
 
@@ -16,36 +17,36 @@
             <h1>Cadastro de Clientes</h1>
             <div class="form-group">
                 <label for="nome">Nome:</label>
-                <input type="text" class="form-control" id="nome" name="nome" required>
+                <input type="text" class="form-control" id="nome" name="nome" required placeholder="Digite seu Nome">
             </div>
             <div class="form-group">
                 <label for="sobrenome">Sobrenome:</label>
-                <input type="text" class="form-control" id="sobrenome" name="sobrenome" required>
+                <input type="text" class="form-control" id="sobrenome" name="sobrenome" required placeholder="Digite seu Sobrenome">
             </div>
             <div class="form-group">
                 <label for="cepInput">CEP:</label>
-                <input type="text" class="form-control" id="cepInput" name="cep" onchange="buscarEndereco()" required>
+                <input type="text" class="form-control" id="cepInput" name="cep" onchange="buscarEndereco()" required placeholder="EX: 44055-23">
             </div>
             <div class="form-group">
                 <label for="endereco">Endereço:</label>
-                <input type="text" class="form-control" id="endereco" name="endereco" readonly>
+                <input type="text" class="form-control" id="endereco" name="endereco" required placeholder="Digite seu Endereço">
             </div>
 
             <div class="form-group">
                 <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required>
+                <input type="email" class="form-control" id="email" name="email" required placeholder="Digite seu Email">
             </div>
             <div class="form-group">
                 <label for="telefone">Telefone:</label>
-                <input type="tel" class="form-control" id="telefone" name="telefone" required>
+                <input type="tel" class="form-control" id="telefone" name="telefone" required placeholder="(00) 00000-0000">
             </div>
             <div class="form-group">
                 <label for="cpf">CPF:</label>
-                <input type="text" class="form-control" id="cpf" name="cpf" >
+                <input type="text" class="form-control" id="cpf" name="cpf" placeholder="000.000.000-00">
             </div>
             <div class="form-group">
                 <label for="cnpj">CNPJ:</label>
-                <input type="text" class="form-control" id="cnpj" name="cnpj" >
+                <input type="text" class="form-control" id="cnpj" name="cnpj" placeholder="00.000.000/0001-00">
             </div>
             <button type="submit" class="btn btn-primary">Cadastrar Cliente</button>
         </form>
@@ -68,7 +69,7 @@
             </tr>
         </thead>
         <tbody>
-                            <tr>
+                <tr>
                     <td>willian da silva braz</td>
                     <td>braz</td>
                     <td>Rua Delmiro Gouveia, Tomba, Feira de Santana - BA</td>
@@ -80,7 +81,7 @@
                         <a href="?delete=-NwguWJQM-Z7cz9S3wXS" class="btn btn-danger">Deletar</a>
                     </td>
                 </tr>
-                    </tbody>
+        </tbody>
     </table>
     
 </div>
